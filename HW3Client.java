@@ -55,9 +55,7 @@ public class HW3Client {
 			try {
 				System.out.println("opening first socket for checking multi");
 				Socket s = new Socket(host,port);
-				dos=new DataOutputStream(s.getOutputStream());
-				dis = new DataInputStream(s.getInputStream());
-			} catch (IOException err) {
+		} catch (IOException err) {
 				System.out.println("Could not connect to server on port " + port);
 				return;
 			}
@@ -66,6 +64,9 @@ public class HW3Client {
 		try {
 			System.out.println("Opening");
 			sock = new Socket(host,port);
+			dos=new DataOutputStream(sock.getOutputStream());
+			dis = new DataInputStream(sock.getInputStream());
+	
 			sock.setSoTimeout(5000);
 		} catch (IOException err) {
 			System.out.println("Could not connect to server on port " + port);
