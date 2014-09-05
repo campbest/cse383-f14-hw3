@@ -80,7 +80,7 @@ public class HW3Client {
 			//get record0
 			ArrayList<Map<String,String>> results = getRecords(0,0);
 			printRecords(results);
-			results = getRecords(0,i);
+			results = getRecords(0,i-1);
 			printRecords(results);
 			disconnect();
 		}
